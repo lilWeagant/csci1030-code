@@ -32,28 +32,28 @@
 
 # # Demonstrate Calling Stack -> do this at beginning on Tuesday May 31st
 
-# def func1(a, b):
-#     x = 1
-#     return a + b + x
+def func1(a, b):
+    x = 1
+    return a + b + x
 
-# def func2(x):
-#     y = 8
-#     z = func1(x, y)
-#     return z
+def func2(x):
+    y = 8
+    z = func1(x, y)
+    return z
 
-# print(func2(4))
+print(func2(4))
 
 # Coding Exercise
 
-x = 12345 # 12345/10 = 12340 with remainder of 5
+#x = 12345 # 12345/10 = 12340 with remainder of 5
 
-def to_str(num):
-    result = ''
-    while num > 0:
-        # % -> modulus operator
-        digit = num % 10
-        num = num//10 # floor division -> truncate decimal point
-        result += str(digit) # += -> shorthand for result = result + str(digit)
-    return result
+# def to_str(num):
+#     result = ''
+#     while num > 0:
+#         # % -> modulus operator
+#         digit = num % 10
+#         num = num//10 # floor division -> truncate decimal point
+#         result += str(digit) # += -> shorthand for result = result + str(digit)
+#     return result
 
-print(to_str(12345))
+# print(to_str(12345))
