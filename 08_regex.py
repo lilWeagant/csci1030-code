@@ -24,3 +24,15 @@ if match: #will execute if the string is a match
 print('All names: ', nameRE.findall('Walt Breslin'))
 print('All names: ', nameRE.findall('Joaquin El Chapo Guzman'))
 
+
+# Regex used in a function 
+def validate_name(name):
+    nameRE = re.compile('[A-Z][a-z]*')
+    match = nameRE.match(name)
+    if match:
+        print(match)
+        return True
+    print(match)
+    return False
+print(validate_name('Walt Breslin'))
+print(validate_name('905-721-8668'))
