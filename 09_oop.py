@@ -2,8 +2,10 @@
 
 # Student Class -> courses, grades, grade_average
 class Student:
-    courses = []
-    grades = []
+
+    def __init__(self):
+        self.courses = []
+        self.grades = []
     def set_course_grade(self, course, grade):  # Setter method/mutator method
         # add course name to a list of courses
         self.courses.append(course)
