@@ -2,9 +2,8 @@
 
 # Student Class -> courses, grades, grade_average
 class Student:
-
-    def __init__(self):
-        self.courses = []
+    def __init__(self):        
+        self.courses = [] # instance variables
         self.grades = []
     def set_course_grade(self, course, grade):  # Setter method/mutator method
         # add course name to a list of courses
@@ -34,6 +33,21 @@ class Course:
     def __str__(self):
         return self.code + ' - ' + self.name
 
+# Implement Online Course
+class OnlineCourse(Course):
+    def __init__(self, code, name):
+        Course.__init__(self, code, name)
+        self.web_address = ""
+        self.open_to_public = False
+    def set_web_address(self, web_address):
+        self.web_address = web_address
+    def get_web_address(self):
+        return self.web_address
+    def is_open_to_public(self):
+        return self.open_to_public
+    def set_open_to_public(self, open_to_public):
+        self.open_to_public = open_to_public
+
 rachel = Student()
 ross = Student()
 course1 = Course("CSCI1030U", "Intro to Computer Science")
@@ -42,6 +56,9 @@ course1 = Course("CSCI1030U", "Intro to Computer Science")
 course2 = Course("MATH1010U", "Calculus I")
 # course2.set_name("Calculus I")
 # course2.set_code("MATH1010U")
+online_course = OnlineCourse("CSCI1060U", "Programming Workshops I")
+online_course.set_open_to_public(True)
+# course2.set_open_to_public(True) -> throw an error -> no method set_open_to_public defined in Course
 rachel.set_course_grade(course1, 64.0)
 rachel.set_course_grade(course2, 85.0)
 ross.set_course_grade(course1, 70.0)
@@ -55,3 +72,4 @@ print(course1)
 print(course2)
 print(rachel)
 print(ross)
+print(online_course)
