@@ -1,0 +1,5 @@
+This is a plain text file 
+With multiple lines
+We can read it all at once
+or line-by-line
+or character by character
