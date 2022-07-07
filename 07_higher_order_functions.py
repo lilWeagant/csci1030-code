@@ -41,6 +41,5 @@ def a_filter(x):
 # a_grades = filter(a_filter, grades)
 # for x in a_grades:
 #     print(x)
-a_grades2 = filter(lambda x: x > 80.0, grades)
-for x in a_grades2:
-    print(x)
+a_grades2 = list(filter(lambda x: x > 80.0, grades))
+print(a_grades2)
