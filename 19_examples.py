@@ -34,8 +34,9 @@ marc = Bet(20, 116)
 
 # Example 2 - Processing file
 # data.txt
+import json
 class Processing: # define a class called Processing
-    def __init__(self, filename):
+    def __init__(self, filename): # constructor
         # what should our dictionary look like?
         # {'1001': {
         # 'first_name': 'Rachel',
@@ -84,14 +85,31 @@ class Processing: # define a class called Processing
         return name_list
     
     def add_student(self, sid, first_name, last_name, midterm_average):
-        self.data_dict[sid] = {
+        self.data_dict[str(sid)] = {
             'first_name':first_name,
             'last_name': last_name,
             'midterm_average':midterm_average
         }
         #print(self.data_dict)
     
+    def write_file(self, filename):
+        with open(filename, 'w') as file:
+            json.dump(self.data_dict, file)
+
+    def __str__(self):
+        result = ''
+        for d in self.data_dict:
+            result += d + ','
+            result += self.data_dict[d]['first_name'] + ','
+            result += self.data_dict[d]['last_name'] + ', '
+            result += str(self.data_dict[d]['midterm_average']) + '\n'
+        return result
+    
 
 
 p = Processing('data.csv')
-p.add_student('1007', 'Jane', 'Doe', 50.0)
+p.add_student(1007, 'Jane', 'Doe', 50.0)
+p.write_file('data_dump.json')
+print(p)
+p.add_student(1008, 'Riley', 'Freethy', 65.0)
+print(p)
