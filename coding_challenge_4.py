@@ -27,7 +27,7 @@ class Student_Test(unittest.TestCase):
     def test_get_courses(self):
         s = Student('Riley', 29)
         s.add_course("CSCI1030U")
-        self.assertTrue(s.get_courses == ['CSCI1030U'])
+        self.assertTrue(s.get_courses() == ['CSCI1030U'])
 
 # -----------------------
 # QUESTION 2
